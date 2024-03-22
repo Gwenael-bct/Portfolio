@@ -1,0 +1,338 @@
+/* Style pour le fond gris clair */
+html {
+    background-color: #D1D0CE;
+    font-family: Arial, sans-serif; /* Utilisation de la police Arial */
+}
+
+/* Bandeau de haut de page */
+.bandeau {
+	background: rgb(34,40,49);
+	background: linear-gradient(90deg, rgba(34,40,49,1) 0%, rgba(38,61,99,1) 15%, rgba(66,102,157,1) 47%, rgba(41,65,99,1) 81%, rgba(36,54,83,1) 100%, rgba(34,40,49,1) 100%);
+    padding: 20px; /* Espacement intérieur du bandeau */
+    position: fixed; /* Position fixe pour que le bandeau reste en haut */
+    top: 0; /* Distance par rapport au haut de la fenêtre */
+    left: 0; /* Distance par rapport à la gauche de la fenêtre */
+    width: 100%; /* Largeur du bandeau */
+    z-index: 1000; /* Indice de superposition pour s'assurer que le bandeau est au-dessus du contenu */
+    color: white; /* Couleur du texte */
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contenu-bandeau {
+    max-width: auto; /* Largeur maximale du contenu du bandeau */
+    margin:  auto; /* Centrage horizontal du contenu du bandeau */
+    padding-bottom: auto; /* Espacement en bas du contenu du bandeau */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contenu-bandeau h1 {
+    margin: 0; /* Supprimer les marges par défaut */
+    text-align: left; /* Alignement du texte à gauche */
+    font-size: 30px; /* Taille de la police */
+    font-weight: bold; /* Mettre le texte en gras */
+	margin-left: 100px;
+}
+
+.raccourcis {
+    list-style: none; /* Supprimer les puces de la liste */
+	font-size: 20px;
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer les marges par défaut */
+    text-align: right; /* Alignement du texte à droite */
+    margin-right: 100px; 
+}
+
+.raccourcis li {
+    display: inline-block; /* Pour aligner les éléments horizontalement */
+    margin-left: 25px; /* Espacement entre les éléments */
+}
+
+.raccourcis li a {
+    color: white; /* Couleur du texte par défaut */
+    background-image: linear-gradient(to right, transparent, lightgoldenrodyellow); /* Dégradé de couleur de la police */
+    background-clip: text; /* Appliquer le dégradé de couleur sur le texte */
+    -webkit-background-clip: text; /* Pour une compatibilité avec certains navigateurs */
+    transition: background-position 0.3s ease; /* Animer le dégradé de couleur */
+    background-size: 200% 100%; /* Taille du dégradé de couleur */
+	text-decoration: none;
+}
+
+.raccourcis li a:hover {
+    background-position: 100%; /* Déplacer le dégradé de couleur à 100% pour le texte complet */
+    color: transparent; /* Changez la couleur du texte au survol */
+	font-size: 24px;
+    font-weight: bold; /* Rendre le texte en gras au survol */
+	transform: scale(1.2); 
+}
+
+/* Courte introduction */
+.header-info {
+    background-color: rgb(34,40,49);
+    background: linear-gradient(90deg, rgba(34,40,49,1) 0%, rgba(38,61,99,1) 15%, rgba(66,102,157,1) 47%, rgba(41,65,99,1) 81%, rgba(36,54,83,1) 100%, rgba(34,40,49,1) 100%);
+    padding: 20px; /* Espacement intérieur du header-info */
+    position: relative; /* Position relative pour que les éléments enfants puissent être positionnés absolument */
+    max-width: auto; /* Largeur maximale du header-info */
+    margin: 0 auto; /* Centrage horizontal du header-info */
+    color: white; /* Couleur du texte */
+	padding-bottom: 148px;
+}
+
+.header-info .description {
+    margin-top: 170px; /* Ajout de marge en haut pour espacement */
+    text-align: left; /* Alignement du texte à gauche */
+    font-size: 40px; /* Taille de la police */
+    font-weight: bold; /* Mettre le texte en gras */
+	margin-left: 100px;
+}
+
+.header-info .résumer {
+    font-size: 16px; /* Taille de la police */
+    color: white; /* Couleur du texte */
+    font-weight: Italic ; /* Mettre le texte en gras */
+	margin-left: 100px;
+}
+
+.header-info img {
+    position: absolute; /* Utiliser une position absolue pour placer l'image */
+    top: 10px; /* Aligner l'image en haut du conteneur parent */
+    right: 0; /* Aligner l'image à l'extrême droite du conteneur parent */
+    width: auto; /* Largeur de l'image automatique */
+    height: auto; /* Hauteur de l'image automatique */
+    opacity: 0.75; /* Niveau de transparence */
+	margin-right: 250px; 
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: white;
+    color: sienna;
+    text-decoration: none;
+    border: 3px solid sienna;
+    border-radius: 5px;
+    transition: color 0.3s ease, border-width 0.3s ease, background-position 0.5s ease-in-out;
+    background-image: linear-gradient(to right, sienna 50%, white 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+    background-clip: border-box;
+	font-weight: bold;
+}
+
+.button:hover {
+    color: white;
+    border-width: 3px;
+    background-position: left bottom;
+	font-weight: bold;
+}
+
+/* Saut */
+.contenu {
+    margin-top: 280px; /* Marge en haut pour compenser la hauteur du bandeau */
+}
+
+/* Carrousssel */
+.carousel {
+    top: -50px;
+    margin-top: auto; /* Ajout d'un espacement entre le contenu et le carrousel */
+    margin-bottom: 50px;
+}
+
+.carousel-item {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-item:hover .content-overlay {
+    opacity: 1;
+}
+
+.carousel-title {
+    color: rgb(170,195,195);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrer les boutons horizontalement */
+    margin-top: 20px; /* Ajouter de la marge en haut */
+}
+
+.button-carrousel {
+    cursor: pointer;
+    padding: 10px 22.5px;
+    position: relative;
+    background:linear-gradient(90deg, rgba(90,145,144,0.75) 3%, rgba(79,136,135,0.8) 16%, rgba(83,138,136,0.9) 23%, rgba(95,152,150,0.9) 38%, rgba(121,176,174,0.8) 55%, rgba(68,128,128,0.75) 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+.button-carrousel:hover {
+    color: black; 
+}
+
+.button-carrousel span {
+	color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    font: bold 18px/66px Arial;
+    transform: scaleX(0.6);
+    letter-spacing: 3px;
+    transform-origin: center left;
+    transition: transform 0.3s ease; 
+    position: relative;
+    z-index: 1;
+}
+
+.button-carrousel em {
+    position: absolute;
+    height: 1px;
+    width: 25%;
+    background: #fff; /* Fond blanc */
+    top: 50%;
+    right: 23px;
+    transform-origin: center right;
+	transform: scaleX(0.25);
+   -webkit-transform:scaleX(0.25);
+    transition: transform 0.3s ease; /* Animation de la transformation */
+    z-index: 1;
+}
+
+.button-carrousel:hover span {
+  color: #000;
+}
+
+.button-carrousel:hover em {
+  background: #000;
+  transform: scaleX(.81);
+  transform: scaleX(.81);
+}
+
+.button-carrousel:before,
+.button-carrousel:after {
+    content: '';
+    background: linear-gradient(90deg, rgba(255,255,255,0.4) 3%, rgba(255,255,255,0.5) 16%, rgba(255,255,255,0.6) 23%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0.4) 100%);
+    display: inline-block; 
+    height: 50%;
+    width: 0;
+    position: absolute;
+    transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -webkit-transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: 0; /* Indice de superposition inférieur */
+}
+
+.button-carrousel:before {
+    top: 0;
+    left: 0;
+    right: auto;
+}
+
+.button-carrousel:after {
+    bottom: 0;
+    right: 0;
+    left: auto;
+}
+
+.button-carrousel:hover:before,
+.button-carrousel:hover:after {
+    width: 100%;
+}
+
+/* Saut */
+.carrousel {
+    margin-bottom: 150px; /* Marge en haut pour compenser la hauteur du bandeau */
+}
+/* Bandeau bas de page */
+.footer {
+    background-color: #192E5B; /* Noir */
+    color: white; /* Blanc */
+    padding: 20px; /* Espacement intérieur du pied de page */
+    text-align: center; /* Centrer le contenu horizontalement */
+    bottom: 0; /* Distance par rapport au bas de la fenêtre */
+    left: 0; /* Distance par rapport à la gauche de la fenêtre */
+    width: 100%; /* Largeur du pied de page */
+    z-index: 10; /* Indice de superposition pour s'assurer que le pied de page est au-dessus du contenu */
+	clear: both; /* Effacer les éléments flottants précédents */
+    position: fixed;
+}
+
+.footer-content {
+    display: flex; /* Utiliser une disposition en flexbox pour aligner les icônes horizontalement */
+    justify-content: center; /* Centrer les icônes horizontalement */
+}
+
+.footer-link {
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    margin: 0 25px; /* Ajouter un espacement entre les icônes */
+}
+
+.footer-icon {
+    width: 44px; /* Largeur de l'icône */
+    height: 44px; /* Hauteur de l'icône */
+}
+
+
+
+#myBtn {
+    display: none;
+    position: fixed;
+	z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; /* Ajoutez cette propriété pour arrondir le bouton */
+    transition: background-color 0.3s;
+}
+
+#myBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Ajoutez cette classe pour styliser l'icône de la flèche */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white; /* Modifiez la couleur si nécessaire */
+}

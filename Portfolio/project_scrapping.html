@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec bandeau fixe</title>
+    <!-- Importation des styles de Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Lien vers votre fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
+	<style>
+        /* Ajouter une marge supérieure pour le contenu principal */
+        .container {
+            margin-top: 100px; /* Modifier la valeur selon vos besoins */
+			margin-bottom: 150px;
+        }
+    </style>
+</head>
+<body>
+<!-- Bandeau haut de page -->
+<div class="bandeau">
+    <div class="contenu-bandeau">
+        <div>
+            <h1>Gwénaël</h1>
+        </div>
+        <ul class="raccourcis">
+            <li><a href="Acceuil.html">Accueil</a></li>
+			<li><a href="#">Spécialités</a></li>
+			<li><a href="Acceuil.html#appli_carousel">Expériences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Contenu principal -->
+<div class="container" style="text-align: justify;">
+	<div style="text-align: center;">
+		<h2>Alimentation d'une base de données</h2>
+	</div>
+    <p>Lors de ma première année de BUT Science des Données (STID), j'ai participé à un projet passionnant visant à collecter des informations à partir d'un site internet
+	et à les intégrer dans une base de données. L'objectif principal était de scraper les informations des produits d'un site internet pour alimenter une base de données créée au préalable.
+	Nous étions deux à travailler sur ce projet et avons choisi de scraper Electro-Dépôt.</p>
+    
+    <h4><i>Étapes clés du code Python :</i></h4>
+    <ol>
+        <li>Utilisation de Python pour le scraping des données du site internet.</li>
+        <li>Utilisation de Beautiful Soup et Requests pour le web scraping.</li>
+        <li>Utilisation de Pandas pour la manipulation des données et la création des dataframes.</li>
+        <li>Utilisation de MySQL pour la gestion de la base de données.</li>
+        <li>Utilisation de PhpMyAdmin pour l'administration de la base de données.</li>
+    </ol>
+    
+    <h4><i>Structure de la base de données :</i></h4>
+    <p>La structure de la base de données comprenait plusieurs tables :</p>
+    <ul>
+        <li><strong>Table Famille :</strong> Cette table est la seule qui a été créée à la main car elle représentait seulement les différentes familles de produits (électroménager, son, image) avec une clé primaire représentant un ID.</li>
+        <li><strong>Table Catégorie :</strong> Chaque famille de produits était divisée en catégories, avec un ID de catégorie et un label. Cette table était créée à partir des données collectées et était liée à la table Famille par ID de famille.</li>
+        <li><strong>Table Sous-catégories :</strong> Similaire à la table Catégorie mais pour les sous-catégories, liée à la table Catégorie par l'ID de catégorie.</li>
+        <li><strong>Table Produit :</strong> Cette table rassemblait toutes les informations liées aux produits telles que le prix, le label et la description, et était liée à la table Sous-catégorie.</li>
+    </ul>
+
+    <div>
+        <img src="img/scrapping/df_categ.JPG" alt="Dataframe 1" style="width: 100%; max-width: 400px;">
+        <p>Le premier dataframe contient les données scrapées des catégories de produits.</p>
+    </div>
+    <div>
+        <img src="img/scrapping/df_sous_categ.JPG" alt="Dataframe 2" style="width: 100%; max-width: 400px;">
+        <p>Le deuxième dataframe contient les données des sous-catégories de produits.</p>
+    </div>
+	<div>
+        <img src="img/scrapping/df_produits.JPG" alt="Dataframe 3" style="width: 100%; max-width: 400px;">
+        <p>
+			Le dernier dataframe contient les données des produits.<br>
+			L'intégralité des produits est récupérée. C'est-à-dire que si une sous-catégorie de produits sur le site possède plusieurs pages, le script les détecte et les scrappe.<br>
+			Après avoir créé les dataframes, ils sont convertis en fichiers CSV. L'étape suivante était de les insérer dans les tables créées sur PhpMyAdmin.
+		</p>
+    </div>
+    
+    <h4><i>Points à retravailler</i></h4>
+    <ol>
+        <li>Malheureusement, la connexion à la base ne fonctionnait pas. Par manque de temps, je n'ai pas pu corriger cela.</li>
+        <li>Un autre souci est que le script n'est pas conçu pour durer dans le temps. Si les liens du site changent de format, par exemple avec plus ou moins de "/", cela peut entraîner des erreurs.</li>
+    </ol> 
+
+	<h4><i>Compétences développées</i></h4>
+	<ol>
+		<li>Conception et gestion d'une base de données.</li>
+		<li>Développement Python et Web Scraping.</li>
+		<li>Manipulation de données avec Pandas.</li>
+	</ol>
+</div>
+
+
+<!-- Bandeau bas de page -->
+<footer class="footer" id="footer">
+    <div class="footer-content">
+        <a href="https://www.linkedin.com/in/gw%C3%A9na%C3%ABl-bauchet-9291b8260/" target="_blank" class="footer-link">
+            <img src="img/logo_linkedin.png" alt="LinkedIn icon" class="footer-icon">
+        </a>
+        <a href="https://mail.google.com/mail" class="footer-link">
+            <img src="img/logo_gmail.png" alt="Email icon" class="footer-icon">
+        </a>
+		<a href="https://github.com/Gwenael-bct" target="_blank" class="footer-link">
+            <img src="img/logo_git.png" alt="Github icon" class="footer-icon Github_icon">
+        </a>
+    </div>
+</footer>
+
+<button onclick="topFunction()" id="myBtn" class="button_scroll">
+    <div class="arrow-up"></div> <!-- Ajoutez cette div pour l'icône de la flèche -->
+</button>
+
+<section id="contact">
+</section>
+
+<!-- Importation des scripts JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Initialisation du carrousel -->
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
+
+</body>
+</html>
