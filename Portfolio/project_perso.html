@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet de Jeu Vidéo 2D en Python</title>
+    <!-- Importation des styles de Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Lien vers votre fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajouter une marge supérieure pour le contenu principal */
+        .container {
+            margin-top: 100px; /* Modifier la valeur selon vos besoins */
+            margin-bottom: 150px;
+        }
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+		/* Style des puces pour les listes ordonnées */
+        ol {
+            list-style-type: none; /* Supprimer le style par défaut */
+            counter-reset: my-counter; /* Réinitialiser le compteur */
+            padding-left: 50px; /* Ajouter un espacement à gauche */
+        }
+        ol li {
+            position: relative; /* Position relative pour le pseudo-élément */
+            margin-bottom: 10px; /* Espacement entre les éléments */
+        }
+        ol li:before {
+            content: "•"; /* Utiliser un point comme puce */
+            color: black; /* Couleur du point */
+            font-size: 1.2em; /* Taille du point */
+            font-weight: bold; /* Mettre le point en gras */
+            position: absolute; /* Position absolue pour le pseudo-élément */
+            left: -20px; /* Décalage vers la gauche */
+            top: 0; /* Alignement au haut */
+        }
+		strong {
+			font-weight: bold;
+		}
+    </style>
+</head>
+<body>
+<!-- Bandeau haut de page -->
+<div class="bandeau">
+    <div class="contenu-bandeau">
+        <div>
+            <h1>Gwénaël</h1>
+        </div>
+        <ul class="raccourcis">
+            <li><a href="Acceuil.html">Accueil</a></li>
+			<li><a href="Acceuil.html#appli_carousel">Expériences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Contenu principal -->
+<div class="container">
+	<div style="text-align: center;">
+		<h2>Projet Personnel</h2>
+	</div>
+	<!-- Sommaire -->
+ <section id="sommaire">
+    <h4><i>Sommaire</i></h4>
+    <ol style="color: black;">
+        <li><a href="#presentation-projet">Présentation du Projet</a></li>
+        <li><a href="#outils-techno">Outils et Technologies Utilisés</a></li>
+        <ol>
+            <li><a href="#Pygame">Pygame</a></li>
+            <li><a href="#PyTMX_PyScroll">PyTMX et PyScroll</a></li>
+        </ol>
+        <li><a href="#structure-projet">Structure du Projet</a></li>
+        <li><a href="#fonctionnement-tiled">Fonctionnement de Tiled</a></li>
+        <ol>
+            <li><a href="#creation_map">Création de la map</a></li>
+            <li><a href="#creation_objets">Création des objets</a></li>
+        </ol>
+        <li><a href="#Carte">Description des cartes</a></li>
+        <li><a href="#futures-maj">Futures Mises à Jour</a></li>
+    </ol>
+</section>
+
+<section id="presentation-projet">
+    <h4><i>Présentation du Projet</i></h4>
+    <p>
+        Mon projet personnel consiste en la création d'un jeu vidéo 2D en Python utilisant la bibliothèque Pygame.
+        L'objectif principal de ce projet est de me perfectionner en Python dans le domaine de la programmation orientée objet tout en prenant du plaisir
+        à voir l'avancée d'un jeu que je code de zéro. En effet, dans mon cursus scolaire je n'ai pas pu approfondir le sujet de la programmation orientée objet
+        qui n'est pas forcément un sujet beaucoup traité en BUT SD (Science des données). J'ai commencé ce projet seul en fin de deuxième année de BUT.<br>
+		Comme je suis le seul à avoir ce jeu, je n'ai pour l'instant pas créé d'environnement Python.
+		Avant de lancer le jeu, il est donc nécessaire d'installer certains packages. Ce jeu fonctionne pour l'instant avec seulement 6 touches:
+		<ol style="list-style-type: none; counter-reset: my-counter;">
+            <li><strong>" Z, Q, S, D "</strong> permettent de se déplacer,</li>
+            <li><strong>" E "</strong> permet de lancer un dialogue avec un PNJ lorsque ce dernier est en contact avec le joueur,</li>
+            <li><strong>" A "</strong> permet de lancer le seul sort actuellement disponible.</li>
+        </ol> <br>
+    </p>
+    <!-- Contenu de la présentation du projet -->
+</section>
+
+<section id="outils-techno">
+    <h4><i>Outils et Technologies Utilisés</i></h4>
+    <p>
+        Pour la réalisation de ce jeu vidéo 2D en Python, j'ai utilisé plusieurs outils et librairies. Tout d'abord, j'ai utilisé <strong>Tiled</strong>,
+        un éditeur de cartes open-source qui m'a permis de créer les différentes cartes du jeu à l'aide de tuiles et d'objets.
+        Tiled offre une interface facile d'utilisation pour construire des niveaux de jeu complexes avec des éléments interactifs.<br>
+        Voici un exemple de map faite avec Tiled
+    </p>
+    <img src="img/jeu_py/ex_carte.JPG" alt="Exemple de carte créée avec Tiled" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+    <section id="Pygame">
+        <h5><i>Pygame</i></h5>
+        <p>
+            En ce qui concerne la programmation du jeu, j'ai utilisé la librairie <strong>Pygame</strong>,
+            qui est une bibliothèque très populaire pour le développement de jeux en Python. Pygame fournit des fonctionnalités pour la gestion des graphismes,
+            des sons, des entrées utilisateur, etc. Elle m'a permis de créer la fenêtre de jeu, de gérer les événements et d'animer les éléments du jeu. <br>
+            Voici quelques exemples d'utilisation de pygame:
+        </p>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; text-align: center;">
+                <p>Création d'une fenêtre</p>
+                <img src="img/jeu_py/pygame_window.jpg" class="project-image" style="max-width: 100%;">
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <p>Gestion d'événements</p>
+                <img src="img/jeu_py/events_pygame.JPG" class="project-image" style="max-width: 100%;">
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <p>Chargement et transformation d'images</p>
+                <img src="img/jeu_py/image_pygame.JPG" class="project-image" style="max-width: 100%;">
+            </div>
+        </div>
+    </section>
+    <section id="PyTMX_PyScroll">
+        <h5><i>PyTMX et PyScroll</i></h5>
+        <p>
+            Pour la gestion des cartes Tiled dans le jeu, j'ai utilisé les librairies <strong>PyTMX</strong> et <strong>PyScroll</strong>.
+            PyTMX est une librairie Python qui permet de charger et de manipuler des cartes créées avec Tiled dans Pygame. Quant à PyScroll,
+            elle offre des fonctionnalités pour faire défiler les cartes et gérer les collisions avec les objets du décor.<br>
+            Voici un exemple d'utilisation de PyScroll et PyTMX:
+        </p>
+        <div style="text-align: center;">
+            <p>Gestion des collisions et chargement d'une map</p>
+            <img src="img/jeu_py/load_map.JPG" class="project-image" style="max-width: 100%;">
+        </div>
+    </section>
+</section>
+
+<section id="structure-projet">
+    <h4><i>Structure du Projet</i></h4>
+    <p>
+        Le projet est organisé de manière à séparer les différents composants du jeu et à faciliter la gestion du code. Voici une vue d'ensemble de l'architecture du projet :
+    </p>
+    <ul>
+        <li><strong>jeu_python/</strong>: Le dossier principal du projet.</li> <br>
+        <li><strong>jeu_python/Scr/</strong>: Ce dossier contient les scripts Python principaux du jeu :</li>
+        <ol style="list-style-type: none; counter-reset: my-counter;">
+            <li><strong>game.py</strong>: Ce script gère la logique principale du jeu, y compris la boucle de jeu, la gestion des événements, l'affichage des graphismes, etc.</li>
+            <li><strong>player.py</strong>: Ce script définit la classe du joueur et gère ses actions et mouvements.</li>
+            <li><strong>projectile.py</strong>: Ce script contient la classe des projectiles et gère les sorts du joueur.</li>
+            <li><strong>monster.py</strong>: Ce script définit la classe des monstres et gère leur comportement, leurs mouvements et leurs collisions.</li>
+            <li><strong>map.py</strong>: Ce script gère la création et la gestion des cartes du jeu, ainsi que les collisions avec les objets du décor.</li>
+            <li><strong>dialog.py</strong>: Ce script contient les dialogues des PNJ (Personnages Non-Joueurs) et gère l'affichage des boîtes de dialogue.</li>
+        </ol> <br>
+        <li><strong>jeu_python/sprites/</strong>: Ce dossier contient les images des personnages et des monstres utilisés dans le jeu.</li><br>
+        <li><strong>jeu_python/sorts/</strong>: Ce dossier contient les images des sorts utilisés par le joueur.</li><br>
+        <li><strong>jeu_python/map/</strong>: Ce dossier contient les différentes cartes du jeu créées avec l'éditeur Tiled.</li><br>
+        <li><strong>jeu_python/dialogs/</strong>: Ce dossier contient les dialogues des PNJ utilisés dans le jeu.</li>
+    </ul>
+    <p>
+        Chaque script remplit un rôle spécifique dans le fonctionnement global du jeu. Par exemple, le script <strong>game.py</strong> est responsable de la boucle de jeu et de l'interaction avec le joueur,
+        tandis que le script <strong>map.py</strong> gère la création et l'affichage des cartes du jeu. 
+		Cette organisation facilite la maintenance du code et permet une collaboration efficace si plusieurs personnes travaillent sur ce projet.
+    </p>
+    <div style="text-align: center;">
+        <p>Architecture du projet</p>
+        <img src="img/jeu_py/architecture.png" class="project-image" style="max-width: 100%;">
+    </div>
+</section>
+
+<section id="fonctionnement-tiled">
+    <h4><i>Fonctionnement de Tiled</i></h4>
+    <!-- Contenu sur le fonctionnement de Tiled dans le script -->
+
+    <!-- Sous-titre 1 : Création de la map -->
+    <section id="creation_map">
+        <h5><i>Création de la map</i></h5>
+        <p>
+            Pour créer une carte dans Tiled, il y a différentes étapes :
+        </p>
+        <ol>
+            <li><strong>La création d'un nouveau projet :</strong> Il faut lancer Tiled et créer un nouveau projet en spécifiant la taille de la carte et des tuiles.</li>
+            <li><strong>L'ajout de tuiles :</strong> Les tuiles sont créées à partir d'images importées. Ces tuiles constituent un tileset, qui est une collection d'images utilisées pour construire la carte.</li>
+            <li><strong>Les couches :</strong> Les tuiles peuvent être placées dans des couches (layers). La couche placée en haut sera celle placée au premier plan,
+            tandis que plus une couche est en bas, plus elle sera en arrière-plan.</li>
+            <li><strong>L'exportation de la carte :</strong> Pour utiliser la carte, il faut l'exporter dans un format compatible avec Pygame, ici le format compatible avec Pygame est TMX.</li><br>
+            <div style="text-align: center;">
+                <p>Visualisation des couches</p>
+                <img src="img/jeu_py/couches.png" alt="" class="project-image" style="max-width: 100%;">
+            </div>
+        </ol>
+    </section>
+    
+    <section id="creation_objets">
+        <!-- Sous-titre 2 : Création de ses objets -->
+        <h5><i>Création de ses objets</i></h5>
+        <p>
+            Tiled permet également de placer des objets sur la carte. Ces objets peuvent être utilisés pour représenter des entités, des zones de déclenchement, des murs, etc.<br>
+            Il existe différents types d'objets tels que :
+        </p>
+        <ol>
+            <li>Les rectangles</li>
+            <li>Les polygones</li>
+            <li>Les points...</li>
+        </ol>
+        <p>
+            Les objets possèdent des caractéristiques :
+        </p>
+        <ol>
+            <li>Un nom et un ID</li>
+            <li>Un type (rectangle, point...)</li>
+            <li>Une classe</li>
+            <li>Des coordonnées</li>
+        </ol>
+        <p>
+            Ces différentes caractéristiques vont permettre d'utiliser ces objets dans Python. Par exemple, pour les murs, je crée des rectangles auxquels je donne la classe "collision". Ainsi, je peux les appeler par leur classe ou leur nom dans le script. Les coordonnées vont quant à elles permettre de placer l'objet.
+        </p>
+                    
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; text-align: center;">
+                <p>Création des objets</p>
+                <img src="img/jeu_py/objets_map.png" class="project-image" style="max-width: 100%;">
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <p>Appel des objets</p>
+                <img src="img/jeu_py/appel_objets.png.JPG" class="project-image" style="max-width: 100%;">
+            </div>
+        </div>
+    </section>
+</section>
+                    
+<section id="Carte">
+    <!-- Sous-titre 3 : Cartes disponibles -->
+    <h4><i>Description des cartes</i></h4>
+    <p>
+        Voici un aperçu des différentes cartes disponibles pour le projet :
+    </p>
+    <!-- Première carte -->
+    <div style="display: flex; justify-content: space-between;">
+        <div style="flex: 1; text-align: center;">
+            <p>Carte 1</p>
+            <img src="img/jeu_py/map1.png" class="project-image" style="max-width: 60%;">
+            <p>Il s'agit de la carte la plus récente. Elle possède une taille de 1920*1088 contrairement aux cartes plus anciennes qui sont plus petites.
+            Comme on le voit sur l'image, cette carte est composée de plusieurs objets malgré qu'il manque de nombreux rectangles de collision.
+            Il y a les objets de type point qui permettent de téléporter les entités à un endroit choisi, des rectangles de collisions pour créer 
+            les murs et des rectangles avec des noms spécifiques pour délimiter les zones qui permettent de passer à la carte suivante.
+            </p>
+        </div>
+    </div>
+    <!-- Deuxième carte -->
+    <div style="display: flex; justify-content: space-between;">
+        <div style="flex: 1; text-align: center;">
+            <p>Carte 2</p>
+            <img src="img/jeu_py/map2.png" class="project-image" style="max-width: 100%;">
+            <p>Il s'agit d'une des premières cartes que j'ai créée. Elle suit le même principe que la carte 1 pour la déclaration et le fonctionnement des objets.
+            Cette carte est destinée à disparaître pour laisser place à une map plus grande.
+            </p>
+        </div>
+    </div>
+    <!-- Troisième carte -->
+    <div style="display: flex; justify-content: space-between;">
+        <div style="flex: 1; text-align: center;">
+            <p>Carte 3</p>
+            <img src="img/jeu_py/map3.png" class="project-image" style="max-width: 100%;">
+            <p>Elle suit le même principe des cartes précédentes pour la déclaration et le fonctionnement des objets.
+            Cette carte est légèrement différente, elle restera petite car elle représente une maison, et j'ai voulu garder un style se rapprochant de Pokémon.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="futures-maj">
+    <h4><i>Futures Mises à Jour</i></h4>
+      <p>Voici un aperçu des changements à venir dans les prochaines mises à jour du jeu :</p>
+        <ol>
+			<li>Ajout de rectangles de collision pour une interaction plus précise.</li>
+            <li>Disparition du monstre lorsque sa vie est descend à 0.</li>
+			<li>Conception d'une fenêtre d'accueil dédiée pour faciliter le lancement du jeu.</li>
+            <li>Intégration de nouveaux sorts pour enrichir l'expérience de jeu.</li>
+            <li>Introduction d'une barre de sorts pour une meilleure gestion des compétences.</li>
+            <li>Création de divers types de monstres pour varier les rencontres.</li>   
+        </ol>
+		<p>Les mises à jour sont organisées dans l'ordre de priorité ; je débuterai par celle située en haut de la liste et conclurai par celle en bas.</p>
+</section>
+
+<!-- Bandeau bas de page -->
+<footer class="footer" id="footer">
+    <div class="footer-content">
+        <a href="https://www.linkedin.com/in/gw%C3%A9na%C3%ABl-bauchet-9291b8260/" target="_blank" class="footer-link">
+            <img src="img/logo_linkedin.png" alt="LinkedIn icon" class="footer-icon">
+        </a>
+        <a href="https://mail.google.com/mail" class="footer-link">
+            <img src="img/logo_gmail.png" alt="Email icon" class="footer-icon">
+        </a>
+        <a href="https://github.com/Gwenael-bct" target="_blank" class="footer-link">
+            <img src="img/logo_git.png" alt="Github icon" class="footer-icon Github_icon">
+        </a>
+    </div>
+</footer>
+
+<button onclick="topFunction()" id="myBtn" class="button_scroll">
+    <div class="arrow-up"></div> <!-- Ajoutez cette div pour l'icône de la flèche -->
+</button>
+
+<section id="contact">
+</section>
+
+
+<!-- Importation des scripts JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Initialisation du carrousel -->
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
+
+</body>
+</html>

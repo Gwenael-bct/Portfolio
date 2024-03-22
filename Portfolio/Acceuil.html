@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec bandeau fixe</title>
+    <!-- Importation des styles de Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Lien vers votre fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bandeau">
+    <div class="contenu-bandeau">
+        <div>
+            <h1>Gwénaël</h1>
+        </div>
+        <ul class="raccourcis">
+            <li><a href="Acceuil.html">Accueil</a></li>
+			<li><a href="#appli_carousel">Expériences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header-info">
+    <div class="description">Bienvenue chez Gwénaël<br></div>
+    <div class="résumer">
+        Je m'appelle Gwénaël Bauchet.<br>
+        J'ai 21 ans et je suis actuellement en troisième année de Bachelor Universitaire de Technologie (BUT) en Science des Données. <br>
+        Durant ma deuxième année, j'ai eu l'opportunité d'effectuer un stage en tant que Data Analyst chez U IRIS. <br>
+        Actuellement, je suis en troisième année en alternance chez U IRIS, où je contribue au maintien et à l'évolution de leur platform data.<br>
+        Mon objectif est de continuer à me spécialiser dans le domaine de la data et de me diriger vers le data engineering.<br>
+		<a href="img/cv.pdf" class="button">Voir CV</a>
+    </div>
+    <img align="right" src="img/me4.png" alt="Votre photo">
+</div>
+<!-- Corps -->
+<div class="carrousel">
+    <section>
+        <div class="container">
+            <!-- Carrousel -->
+            <div class="carousel affichage" id="appli_carousel">
+                
+                <!-- Première image du carrousel -->
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/jeu.jpg">
+                        <div class="content-overlay">
+                            <div class="carousel-title">Projet Personnel</div>
+                            <div class="button-wrapper">
+                                <a href="project_perso.html" class="button-carrousel">
+								<em></em>
+								<span>Voir projet</span>
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Deuxième image du carrousel -->
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/projet_scrapping.JPG">
+                        <div class="content-overlay">
+                            <div class="carousel-title">Web Scrapping</div>
+                            <div class="button-wrapper">
+                                <a href="project_scrapping.html" class="button-carrousel">
+								<em></em>
+								<span>Voir projet</span>
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+				
+				<!-- Troisième image du carrousel -->
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/cv.png">
+                        <div class="content-overlay">
+                            <div class="carousel-title">Projet 2</div>
+                            <div class="button-wrapper">
+                                <a href="img/cv.pdf" class="button-carrousel">
+								<em></em>
+								<span>Voir projet</span>
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>              			
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Bandeau de bas de page -->
+<footer class="footer" id="footer">
+    <div class="footer-content">
+        <a href="https://www.linkedin.com/in/gw%C3%A9na%C3%ABl-bauchet-9291b8260/" target="_blank" class="footer-link">
+            <img src="img/logo_linkedin.png" alt="LinkedIn icon" class="footer-icon">
+        </a>
+        <a href="https://mail.google.com/mail" class="footer-link">
+            <img src="img/logo_gmail.png" alt="Email icon" class="footer-icon">
+        </a>
+		<a href="https://github.com/Gwenael-bct" target="_blank" class="footer-link">
+            <img src="img/logo_git.png" alt="Github icon" class="footer-icon Github_icon">
+        </a>
+    </div>
+</footer>
+
+<!-- Bouton pour remonter en haut de la page -->
+<button onclick="topFunction()" id="myBtn" class="button_scroll">
+    <div class="arrow-up"></div> <!-- Ajoutez cette div pour l'icône de la flèche -->
+</button>
+
+
+<section id="contact">
+</section>
+
+<!-- Importation des scripts JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="script.js"></script>
+<!-- Initialisation du carrousel -->
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
+
+</body>
+</html>
