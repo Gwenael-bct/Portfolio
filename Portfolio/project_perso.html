@@ -62,9 +62,9 @@
 <div class="container">
 	<div style="text-align: center;">
 		<h2>Projet Personnel</h2>
-	</div>
+</div>
 	<!-- Sommaire -->
- <section id="sommaire">
+<section id="sommaire">
     <h4><i>Sommaire</i></h4>
     <ol style="color: black;">
         <li><a href="#presentation-projet">Présentation du Projet</a></li>
@@ -87,12 +87,14 @@
 <section id="presentation-projet">
     <h4><i>Présentation du Projet</i></h4>
     <p>
+        <div style="text-align: justify;">
         Mon projet personnel consiste en la création d'un jeu vidéo 2D en Python utilisant la bibliothèque Pygame.
         L'objectif principal de ce projet est de me perfectionner en Python dans le domaine de la programmation orientée objet tout en prenant du plaisir
         à voir l'avancée d'un jeu que je code de zéro. En effet, dans mon cursus scolaire je n'ai pas pu approfondir le sujet de la programmation orientée objet
         qui n'est pas forcément un sujet beaucoup traité en BUT SD (Science des données). J'ai commencé ce projet seul en fin de deuxième année de BUT.<br>
 		Comme je suis le seul à avoir ce jeu, je n'ai pour l'instant pas créé d'environnement Python.
 		Avant de lancer le jeu, il est donc nécessaire d'installer certains packages. Ce jeu fonctionne pour l'instant avec seulement 6 touches:
+    </div>
 		<ol style="list-style-type: none; counter-reset: my-counter;">
             <li><strong>" Z, Q, S, D "</strong> permettent de se déplacer,</li>
             <li><strong>" E "</strong> permet de lancer un dialogue avec un PNJ lorsque ce dernier est en contact avec le joueur,</li>
@@ -105,19 +107,23 @@
 <section id="outils-techno">
     <h4><i>Outils et Technologies Utilisés</i></h4>
     <p>
+        <div style="text-align: justify;">
         Pour la réalisation de ce jeu vidéo 2D en Python, j'ai utilisé plusieurs outils et librairies. Tout d'abord, j'ai utilisé <strong>Tiled</strong>,
         un éditeur de cartes open-source qui m'a permis de créer les différentes cartes du jeu à l'aide de tuiles et d'objets.
         Tiled offre une interface facile d'utilisation pour construire des niveaux de jeu complexes avec des éléments interactifs.<br>
         Voici un exemple de map faite avec Tiled
+        </div>
     </p>
     <img src="img/jeu_py/ex_carte.JPG" alt="Exemple de carte créée avec Tiled" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
     <section id="Pygame">
         <h5><i>Pygame</i></h5>
         <p>
+            <div style="text-align: justify;">
             En ce qui concerne la programmation du jeu, j'ai utilisé la librairie <strong>Pygame</strong>,
             qui est une bibliothèque très populaire pour le développement de jeux en Python. Pygame fournit des fonctionnalités pour la gestion des graphismes,
             des sons, des entrées utilisateur, etc. Elle m'a permis de créer la fenêtre de jeu, de gérer les événements et d'animer les éléments du jeu. <br>
             Voici quelques exemples d'utilisation de pygame:
+            </div>
         </p>
         <div style="display: flex; justify-content: space-between;">
             <div style="flex: 1; text-align: center;">
@@ -137,10 +143,12 @@
     <section id="PyTMX_PyScroll">
         <h5><i>PyTMX et PyScroll</i></h5>
         <p>
+            <div style="text-align: justify;">
             Pour la gestion des cartes Tiled dans le jeu, j'ai utilisé les librairies <strong>PyTMX</strong> et <strong>PyScroll</strong>.
             PyTMX est une librairie Python qui permet de charger et de manipuler des cartes créées avec Tiled dans Pygame. Quant à PyScroll,
             elle offre des fonctionnalités pour faire défiler les cartes et gérer les collisions avec les objets du décor.<br>
             Voici un exemple d'utilisation de PyScroll et PyTMX:
+            </div>
         </p>
         <div style="text-align: center;">
             <p>Gestion des collisions et chargement d'une map</p>
@@ -171,9 +179,11 @@
         <li><strong>jeu_python/dialogs/</strong>: Ce dossier contient les dialogues des PNJ utilisés dans le jeu.</li>
     </ul>
     <p>
+        <div style="text-align: justify;">
         Chaque script remplit un rôle spécifique dans le fonctionnement global du jeu. Par exemple, le script <strong>game.py</strong> est responsable de la boucle de jeu et de l'interaction avec le joueur,
         tandis que le script <strong>map.py</strong> gère la création et l'affichage des cartes du jeu. 
 		Cette organisation facilite la maintenance du code et permet une collaboration efficace si plusieurs personnes travaillent sur ce projet.
+        </div>
     </p>
     <div style="text-align: center;">
         <p>Architecture du projet</p>

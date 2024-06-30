@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec bandeau fixe</title>
+    <!-- Importation des styles de Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Lien vers votre fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajouter une marge supérieure pour le contenu principal */
+        .container {
+            margin-top: 100px; /* Modifier la valeur selon vos besoins */
+            margin-bottom: 150px;
+        }
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        /* Style des puces pour les listes ordonnées */
+        ol {
+            list-style-type: none; /* Supprimer le style par défaut */
+            counter-reset: my-counter; /* Réinitialiser le compteur */
+            padding-left: 50px; /* Ajouter un espacement à gauche */
+        }
+        ol li {
+            position: relative; /* Position relative pour le pseudo-élément */
+            margin-bottom: 10px; /* Espacement entre les éléments */
+        }
+        ol li:before {
+            content: "•"; /* Utiliser un point comme puce */
+            color: black; /* Couleur du point */
+            font-size: 1.2em; /* Taille du point */
+            font-weight: bold; /* Mettre le point en gras */
+            position: absolute; /* Position absolue pour le pseudo-élément */
+            left: -20px; /* Décalage vers la gauche */
+            top: 0; /* Alignement au haut */
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!-- Bandeau haut de page -->
+<div class="bandeau">
+    <div class="contenu-bandeau">
+        <div>
+            <h1>Gwénaël</h1>
+        </div>
+        <ul class="raccourcis">
+            <li><a href="Acceuil.html">Accueil</a></li>
+			<li><a href="Acceuil.html#appli_carousel">Expériences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div style="text-align: center;">
+        <h2>Application de visualisation de films</h2>
+    </div>
+
+    <!-- Sommaire -->
+    <section id="sommaire">
+        <h4><i>Sommaire</i></h4>
+        <ol style="color: black;">
+            <li><a href="#presentation-projet">Présentation du Projet</a></li>
+            <li><a href="#technos">Technologies utilisées</a></li>
+            <li><a href="#Architecture">Architecture de l'application</a></li>
+            <li><a href="#Déploiement">Déploiement du script</a></li>
+            <li><a href="#Dashboard">Tableau de bord</a></li>
+        </ol>
+    </section>
+    <!-- Contenu principal -->
+    <section id="presentation-projet">
+        <h4><i>Présentation du Projet</i></h4>
+        <div style="text-align: justify;">
+            <p>Lors de ma troisième année de BUT Science des Données (STID), j'ai participé à un projet visant à collecter des données, alimenter une base de données et construire un tableau de bord par rapport à une 
+            problématique choisie au préalable. Ce projet a été réalisé à trois sur une période de quatre semaines, et la problématique que nous avons choisie était la suivante : Quels sont les éléments qui influencent la réussite d’un film ? Le choix des technologies, de la problématique et des données utilisées était entièrement libre.
+            Pour nous démarquer sur ce projet, nous avons décidé de réaliser une application entièrement automatisée de la collecte et de l'alimentation du tableau de bord.
+            Pour automatiser cette application, nous avons opté pour une architecture complexe comprenant plusieurs technologies autour du cloud. Dans ce projet, j'ai principalement participé à la réalisation de l'architecture de l'application ainsi qu'à la partie scripting.
+            </p>
+        </div>
+    </section>
+
+    <!-- Partie technos -->
+    <section id="technos">
+        <h4><i>Technologies Utilisées</i></h4>
+        <p>
+            <div style="text-align: justify;">
+            Pour la réalisation de ce projet, nous avons utilisé plusieurs technologies comme le montre l'image ci-dessous.
+            </div>
+        </p>
+        <img src="img/Outil_visualisation/technos.JPG" alt="Technologies utilisées" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+        <p>
+            <div style="text-align: justify;">
+            Nous avons décidé de choisir les services de Google Cloud Platform (GCP) pour plusieurs raisons :
+            </div>
+        </p>
+        <ul>
+            <ol style="list-style-type: none; counter-reset: my-counter;">
+                <li><strong>Le stockage</strong> : Le stockage se fait sur BigQuery (BQ), les requêtes dans BigQuery sont très rapides mais elles ont un prix.</li>
+                <li><strong>La simplicité</strong> : La configuration est faite par nous-mêmes, de plus les API REST de Google permettent facilement de se brancher aux tables BQ.</li>
+                <li><strong>L'automatisation</strong> : La partie Compute Engine permet de louer des VM (machines virtuelles) qui tournent en permanence. On verra par la suite que cela nous a permis d'automatiser l'application.</li>
+                <li><strong>La découverte</strong> : Nous avons pu découvrir de nouvelles technologies liées au cloud au lieu de rester sur Oracle ou d'autres technologies que nous avions déjà manipulées.</li>
+                <li><strong>La gestion des coûts</strong> : Chacune de nos actions avait un coût, que ce soit lié aux requêtes SQL ou à l'utilisation de VM. Cela nous a permis de prendre conscience des coûts des actions dans le cloud. À l'inscription sur GCP, nous avons une période d'essai et 300 euros offerts, nous n'avons donc pas eu besoin d'utiliser notre propre argent.</em></li>
+            </ol> <br>
+        </ul>
+        <p>
+            <div style="text-align: justify;">
+            Pour la partie ETL (extraire, transformer et charger les données), nous avons choisi d'utiliser Python car c'est un langage que nous maîtrisons et que cela nous permet d'automatiser l'application. Pour la partie visualisation, nous avons choisi Power BI car il propose un large choix de visualisations et il peut se brancher à une base BQ.
+            Pour donner un ordre d'idée sur le coût du projet, il s'élève à un peu moins de 4 euros en comptant seulement les coûts liés aux requêtes SQL et à l'utilisation de la VM. En comptant la location de la VM, nous avons atteint environ 20 euros. Pour réduire les dépenses au maximum, nous avons décidé de louer la VM la moins chère car nous n'avions pas besoin d'une VM très performante pour faire tourner notre script Python. La seconde méthode est de réduire le coût des requêtes SQL. Voici une image qui explique comment réduire le coût d'une requête :
+        </p>
+        
+        <img src="img/Outil_visualisation/cout_requete.JPG" alt="Coût des requêtes" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+        <br>
+    </section>
+
+    <!-- Partie architecture -->
+    <section id="Architecture">
+        <h4><i>Architecture de l'application</i></h4>
+        <p>
+            Pour mieux comprendre l'interaction entre ces différentes briques, voici un schéma :
+        </p>
+        <img src="img/Outil_visualisation/Architecture.JPG" alt="Architecture de l'application" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+        <p>
+            Ce schéma explique que le script Python est hébergé dans une VM, puis il utilise 2 API pour récupérer les données sur des films et des acteurs. Le script va ensuite alimenter les tables films et acteurs dans BQ, et Power BI va ensuite se brancher sur BQ pour alimenter ses visualisations.
+        </p>
+    </section>
+
+    <!-- Partie déploiement -->
+    <section id="Déploiement">
+        <h4><i>Déploiement du script et ses composants</i></h4>
+        <p>
+            Le script Python et ses composants sont hébergés dans la VM GCP, voici les différents composants.
+        </p>
+        <img src="img/Outil_visualisation/composants.JPG" alt="Les composants du script Python" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+        <p>
+            <ul>
+                <ol style="list-style-type: none; counter-reset: my-counter;">
+                    <li><strong>La configuration</strong> : Il s'agit de la configuration liée au script Python comme des mots de passe ou une date de sauvegarde utilisée et changée par le script.</li>
+                    <li><strong>Les logs</strong> : Les logs permettent de voir combien de films sont récupérés et de voir l'état des différents blocs de traitement.
+                        <img src="img/Outil_visualisation/log.JPG" alt="Les composants du script Python" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+                    </li>
+                    <li><strong>L'environnement virtuel Python</strong> : Il permet de gérer la version de Python et des différents packages utilisés par le script Python. Cela permet d'avoir une meilleure portabilité et d'exécuter le script sans avoir besoin d'installer les packages et dépendances.</li>
+                    <li><strong>Le script Bash</strong> : Le script Python utilise des chemins relatifs, il est donc nécessaire de faire un script Bash pour se placer dans le bon répertoire lors de l'exécution automatique et lancer l'environnement virtuel Python avant de lancer le script. Voici une image du script Bash :
+                        <img src="img/Outil_visualisation/bash.JPG" alt="Les composants du script Python" class="project-image" style="display: block; margin: 0 auto; max-width: 50%;">
+                    </li>
+                    <li><strong>Le script Python</strong> : Le script Python permet de récupérer, transformer et charger les données dans BQ.</li>
+                    <li><strong>La clé du compte de service</strong> : Un compte de service GCP permet d'accéder à certains services GCP sans avoir besoin d'une connexion manuelle. Il est donc indispensable d'en avoir un si on veut un script qui tourne automatiquement. Il permet par exemple de se connecter à une table dans BQ. La clé est ce qui permet de s'identifier avec le compte de service au lieu de s'identifier manuellement.</em></li>
+                </ol> <br>
+            </ul>    
+        </p>
+        <p>
+            Ces différents composants participent à l'exécution automatique du script mais il manque un élément, le déclencheur du script Bash. Pour lancer automatiquement le script Bash toutes les 4 heures, nous utilisons systemd qui est une suite logicielle qui fournit une gamme de composants système pour les systèmes d'exploitation Linux.
+            On crée 2 scripts : Timer Unit qui permet de préciser les horaires d'exécution, et Service Unit qui permet de préciser ce qu'on souhaite exécuter.
+            Voici une image pour illustrer cela :
+        </p>
+        <br>
+        <img src="img/Outil_visualisation/systemd.JPG" alt="Les composants du script Python" class="project-image" style="display: block; margin: 0 auto; max-width: 75%;">
+        <br>
+        <p>
+            <div style="text-align: center;">
+                Ici, on précise donc que le script execute.sh se lance automatiquement à 4h, 12h et 18h.
+            </div>
+        </p>
+    </section>
+
+    <!-- Partie Dashboard -->
+    <section id="Dashboard">
+        <h4><i>Tableau de bord</i></h4>
+        <p>
+            Ce tableau de bord permet de rechercher des films, des acteurs, des réalisateurs et permet aussi de suivre l'évolution de carrière d'un acteur ou réalisateur.
+        </p>
+    </section>
+
+    <!-- Bandeau bas de page -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <a href="https://www.linkedin.com/in/gw%C3%A9na%C3%ABl-bauchet-9291b8260/" target="_blank" class="footer-link">
+                <img src="img/logo_linkedin.png" alt="LinkedIn icon" class="footer-icon">
+            </a>
+            <a href="https://mail.google.com/mail" class="footer-link">
+                <img src="img/logo_gmail.png" alt="Email icon" class="footer-icon">
+            </a>
+            <a href="https://github.com/Gwenael-bct" target="_blank" class="footer-link">
+                <img src="img/logo_git.png" alt="Github icon" class="footer-icon Github_icon">
+            </a>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" class="button_scroll">
+        <div class="arrow-up"></div> <!-- Ajoutez cette div pour l'icône de la flèche -->
+    </button>
+
+    <section id="contact">
+    </section>
+
+    <!-- Importation des scripts JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Initialisation du carrousel -->
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
+    </script>
+
+</body>
+</html>
